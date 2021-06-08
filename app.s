@@ -7,7 +7,7 @@
 
 main:
 	// X0 contiene la direccion base del framebuffer
- 	mov x23, x0	// Save framebuffer base address to x20
+ 	mov x23, x0	// Save framebuffer base address to x23
 	
 	//COLORES
 	movz x10, 0x01, lsl 16
@@ -63,90 +63,24 @@ paintBackground:
 
 //CREMA DE LA GALLETA
 //Línea 1
-lineHeightCream1:
-	mov x2,7 // Line height in pixels
-setInitialPositionCream1:
-	movz x24, 0x07, lsl 16
-	movk x24, 0x358C, lsl 00 // 4 * (285 + (185 * 640)) - 4 * (640 - 70)
-	add x0,x23,x24
-newLineCream1:
-	mov x1,70 // Line width in pixels
-	add x0,x0,2280 // (640 - 70) * 4
-paintLineCream1:
-	stur w13,[x0]	   // Set color of pixel N
+mov x1,70 // Line width in pixels
+mov x2,7 // Line height in pixels
+mov x3,2280 // 4 * (640 - line width)
+mov x4, x1 // Auxiliar variable
+movz x24, 0x07, lsl 16
+movk x24, 0x358C, lsl 00 // 4 * (285 + (185 * 640)) - x3
+add x0,x23,x24 // Set initial position to x0
+add w4,w13,wzr // Set color
+newLine:
+	mov x1,x4
+	add x0,x0,x3
+paintLine:
+	stur w4,[x0]	   // Set color of pixel N
 	add x0,x0,4	   // Next pixel
 	sub x1,x1,1	   // decrement X counter
-	cbnz x1,paintLineCream1	   // If not end row jump
+	cbnz x1,paintLine	   // If not end row jump
 	sub x2,x2,1	   // Decrement Y counter
-	cbnz x2,newLineCream1	   // if not last row, jump
-//Línea 2
-lineHeightCream2:
-	mov x2,5 // Line height in pixels
-setInitialPositionCream2:
-	movz x24, 0x07, lsl 16
-	movk x24, 0x7BA0, lsl 00 // 4 * (280 + (192 * 640)) - 4 * (640 - 80)
-	add x0,x23,x24
-newLineCream2:
-	mov x1,80 // Line width in pixels
-	add x0,x0,2240 // 4 * (640 - 80)
-paintLineCream2:
-	stur w13,[x0]	   // Set color of pixel N
-	add x0,x0,4	   // Next pixel
-	sub x1,x1,1	   // decrement X counter
-	cbnz x1,paintLineCream2	   // If not end row jump
-	sub x2,x2,1	   // Decrement Y counter
-	cbnz x2,newLineCream2	   // if not last row, jump
-//Línea 3
-lineHeightCream3:
-	mov x2,54 // Line height in pixels
-setInitialPositionCream3:
-	movz x24, 0x07, lsl 16
-	movk x24, 0xADB8, lsl 00 // 4 * (274 + (197 * 640)) - 4 * (640 - 92)
-	add x0,x23,x24
-newLineCream3:
-	mov x1,92 // Line width in pixels
-	add x0,x0,2192 // 4 * (640 - 92)
-paintLineCream3:
-	stur w13,[x0]	   // Set color of pixel N
-	add x0,x0,4	   // Next pixel
-	sub x1,x1,1	   // decrement X counter
-	cbnz x1,paintLineCream3	   // If not end row jump
-	sub x2,x2,1	   // Decrement Y counter
-	cbnz x2,newLineCream3	   // if not last row, jump
-//Linea 4
-lineHeightCream4:
-	mov x2,5 // Line height in pixels
-setInitialPositionCream4:
-	movz x24, 0x09, lsl 16
-	movk x24, 0xC9A0, lsl 00 // 4 * (280 + (251 * 640)) - 4 * (640 - 80)
-	add x0,x23,x24
-newLineCream4:
-	mov x1,80 // Line width in pixels
-	add x0,x0,2240 // 4 * (640 - 80)
-paintLineCream4:
-	stur w13,[x0]	   // Set color of pixel N
-	add x0,x0,4	   // Next pixel
-	sub x1,x1,1	   // decrement X counter
-	cbnz x1,paintLineCream4	   // If not end row jump
-	sub x2,x2,1	   // Decrement Y counter
-	cbnz x2,newLineCream4	   // if not last row, jump
-//Línea 5
-lineHeightCream5:
-	mov x2,7 // Line height in pixels
-setInitialPositionCream5:
-	movz x24, 0x09, lsl 16
-	movk x24, 0xFB8C, lsl 00 // 4 * (285 + (256 * 640)) - 4 * (640 - 70)
-	add x0,x23,x24
-newLineCream5:
-	mov x1,70 // Line width in pixels
-	add x0,x0,2280 // (640 - 70) * 4
-paintLineCream5:
-	stur w13,[x0]	   // Set color of pixel N
-	add x0,x0,4	   // Next pixel
-	sub x1,x1,1	   // decrement X counter
-	cbnz x1,paintLineCream5	   // If not end row jump
-	sub x2,x2,1	   // Decrement Y counter
-	cbnz x2,newLineCream5	   // if not last row, jump
+	cbnz x2,newLine	   // if not last row, jump
 
 InfLoop: 
 	b InfLoop
