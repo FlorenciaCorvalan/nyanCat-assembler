@@ -8,7 +8,7 @@
 .globl main
 main:
 	// X0 contiene la direccion base del framebuffer
- 	mov x22, x0	// Save framebuffer base address to x20	
+ 	mov x23, x0	// Save framebuffer base address to x20	
 	//---------------- CODE HERE ------------------------------------
 	
 	movz x10, 0x01, lsl 16
@@ -47,8 +47,8 @@ main:
 	movz x21, 0x00, lsl 16
 	movk x21, 0x0000, lsl 00  //Negro
 	
-	movz x21, 0xFF, lsl 16
-	movk x21, 0xFFFF, lsl 00  //Blanco
+	movz x22, 0xFF, lsl 16
+	movk x22, 0xFFFF, lsl 00  //Blanco
 
 	mov x2, SCREEN_HEIGH         // Y Size 
 loop1:
