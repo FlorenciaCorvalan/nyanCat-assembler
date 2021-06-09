@@ -147,6 +147,137 @@ paintLineCream5:
 	cbnz x1,paintLineCream5	   // If not end row jump
 	sub x2,x2,1	   // Decrement Y counter
 	cbnz x2,newLineCream5	   // if not last row, jump
+	
+	
+//------------------------------- ACA COPIO Y PEGO-------------------------------------------------------------------
 
-InfLoop: 
-	b InfLoop
+
+animation:
+		bl paintBackground
+	
+		
+		
+		
+		//linea superior negra lomo
+		movz x0, 273
+		movz x1, 180   //aca las coordenadas
+		movz x2, 92
+		movz x3, 5   //aca el ancho y largo
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //lila
+		bl paintLine
+		
+		//otra linea negra de la cara 
+		movz x0, 322
+		movz x1, 235   //aca las coordenadas
+		movz x2, 5
+		movz x3, 26   //aca el ancho y largo
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //lila
+		bl paintLine
+		
+		
+		//otra linea negra de la cara mas arriba
+		movz x0, 327
+		movz x1, 212   //aca las coordenadas
+		movz x2, 5
+		movz x3, 24   //aca el ancho y largo
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //lila
+		bl paintLine
+		
+		
+		//linea negra grande lateral
+		movz x0, 263
+		movz x1, 192   //aca las coordenadas
+		movz x2, 5
+		movz x3, 80   //aca el ancho y largo
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //lila
+		bl paintLine
+		
+		
+		
+		
+	
+	 //PUNTO NEGRO
+		movz x0, 268
+		movz x1, 186   //aca las coordenadas
+		movz x2, 5
+		movz x3, 6  //aca el ancho y largo
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //lila
+		bl paintLine
+		
+		//rosa
+		movz x0, 268
+		movz x1, 192   //aca las coordenadas
+		movz x2, 5
+		movz x3, 80  //aca el ancho y largo
+		movz x4, 0xFF, lsl 16
+	        movk x4, 0xCB9B, lsl 00 //lila
+		bl paintLine
+		
+		//CREMA
+		mov x0, 271
+		movz x1, 202
+		movz x2, 92
+		movz x3, 54
+		movz x4, 0xFF, lsl 16
+	        movk x4, 0x98FF, lsl 00 //rosa que representa a nyan cat aunque no es lo que hace en el gif pero es de prueba
+		bl paintLine
+	
+	
+	
+		
+		//-------------	--------------------------------------------------
+		// Loop infinito
+		//add x19, x19, #1
+		//mov x0, 0xFFFFF
+		//bl delay a definir porque algo anda mal
+		
+	InfLoop: 
+		b InfLoop
+	
+//------------------------------------------------------------------funciones----------------------------------	
+	paintBackground:
+		mov x0, x23
+	
+		movz x2, 0x01, lsl 16
+	        movk x2, 0x3368, lsl 00   // azul
+		movz x1, 0xB000
+		movk x1, 0x4, LSL #16
+	
+	super_loop0:
+		stur x2,[x0]	   // Set color of pixel N
+	
+		add x0,x0,4	   // Next pixel
+		sub x1,x1,1	   // decrement X counter
+		cbnz x1,super_loop0	   // If not end row jump
+		ret
+	 
+	
+	paintLine: // x0: X, x1: Y, x2: W, x3: H, x4: Color
+	
+	paintLinefila: 
+		mov	   x5, SCREEN_WIDTH
+		mul    x5, x1, x5
+		add    x5, x5, x0
+		lsl	   x5, x5, #2
+		add    x5, x5, x23
+		mov    x6, x2
+	paintLinecolumna:
+			str x4, [x5]
+			add x5, x5, #4
+			sub x6, x6, #1
+			cbnz x6, paintLinecolumna
+		add x1, x1, #1
+		sub x3, x3, #1
+		cbnz x3, paintLinefila
+	
+		ret
+
+
+
+
+
