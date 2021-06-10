@@ -15,7 +15,7 @@ main:
 		mov x7, 176
 		bl paintPopTart
 
-		bl paintRainbow
+		bl paintRainbow1
 		
 		//b animation
 	InfLoop: 
@@ -185,11 +185,19 @@ main:
 		movz x3, 5
 		bl paintLine //cereza 10
 
-	paintRainbow:
-	//PRIMERA COLUMNA ARCOIRIS
+	paintRainbow1:
+		movz x7, 0
+		movz x8, 181
+		bl paintRainbowColumn
+		add x7, x7, 45
+		sub x8, x8, 5
+		bl paintRainbowColumn
+		ret
+
+	paintRainbowColumn:
 		//rojo
-		mov x0, 0
-		movz x1, 181
+		mov x0, x7
+		mov x1, x8
 		movz x2, 45
 		movz x3, 16
 		movz x4, 0xFF, lsl 16
@@ -197,282 +205,41 @@ main:
 		bl paintLine
 		
 		//orange
-		mov x0, 0
-		movz x1, 197
-		movz x2, 45
+		add x1, x8, 16
 		movz x3, 16
 		movz x4, 0xFF, lsl 16
 	        movk x4, 0x9101, lsl 00 
 		bl paintLine
 		
 		//yellow
-		mov x0, 0
-		movz x1, 213
-		movz x2, 45
+		add x1, x8, 32
 		movz x3, 16
 		movz x4, 0xFF, lsl 16
 	        movk x4, 0xFF00, lsl 00 
 		bl paintLine
 		
 		//green
-		mov x0, 0
-		movz x1, 229
-		movz x2, 45
+		add x1, x8, 48
 		movz x3, 16
 		movz x4, 0x34, lsl 16
 	        movk x4, 0xFF00, lsl 00 
 		bl paintLine
 		
 		//celeste
-		mov x0, 0
-		movz x1, 245
-		movz x2, 45
+		add x1, x8, 64
 		movz x3, 16
 		movz x4, 0x01, lsl 16
 	        movk x4, 0x98FF, lsl 00 
 		bl paintLine
 		
 		//violet
-		mov x0, 0
-		movz x1, 261
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0x68, lsl 16
-	        movk x4, 0x32FF, lsl 00 
-		bl paintLine
-		
-		
-		// segunda columna arcoiris---------------------------------------------------
-		//rojo
-		mov x0, 43
-		movz x1, 176
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0x0000, lsl 00 
-		bl paintLine
-		
-		//orange
-		mov x0, 43
-		movz x1, 192
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0x9101, lsl 00 
-		bl paintLine
-		
-		//yellow
-		mov x0, 43
-		movz x1, 208
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0xFF00, lsl 00 
-		bl paintLine
-		
-		//green
-		mov x0, 43
-		movz x1, 224
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0x34, lsl 16
-	        movk x4, 0xFF00, lsl 00 
-		bl paintLine
-		
-		//celeste
-		mov x0, 43
-		movz x1, 240
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0x01, lsl 16
-	        movk x4, 0x98FF, lsl 00 
-		bl paintLine
-		
-		//violet
-		mov x0, 43
-		movz x1, 256
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0x68, lsl 16
-	        movk x4, 0x32FF, lsl 00 
-		bl paintLine
-		
-		
-		//TERCERA COLUMNA
-		//rojo
-		mov x0, 86
-		movz x1, 181
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0x0000, lsl 00 
-		bl paintLine
-		
-		//orange
-		mov x0, 86
-		movz x1, 197
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0x9101, lsl 00 
-		bl paintLine
-		
-		//yellow
-		mov x0, 86
-		movz x1, 213
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0xFF00, lsl 00 
-		bl paintLine
-		
-		//green
-		mov x0, 86
-		movz x1, 229
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0x34, lsl 16
-	        movk x4, 0xFF00, lsl 00 
-		bl paintLine
-		
-		//celeste
-		mov x0, 86
-		movz x1, 245
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0x01, lsl 16
-	        movk x4, 0x98FF, lsl 00 
-		bl paintLine
-		
-		//violet
-		mov x0, 86
-		movz x1, 261
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0x68, lsl 16
-	        movk x4, 0x32FF, lsl 00 
-		bl paintLine
-		
-		//CUARTA COLUMNA
-		//rojo
-		mov x0, 172
-		movz x1, 181
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0x0000, lsl 00 
-		bl paintLine
-		
-		//orange
-		mov x0, 172
-		movz x1, 197
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0x9101, lsl 00 
-		bl paintLine
-		
-		//yellow
-		mov x0, 172
-		movz x1, 213
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0xFF00, lsl 00 
-		bl paintLine
-		
-		//green
-		mov x0, 172
-		movz x1, 229
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0x34, lsl 16
-	        movk x4, 0xFF00, lsl 00 
-		bl paintLine
-		
-		//celeste
-		mov x0, 172
-		movz x1, 245
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0x01, lsl 16
-	        movk x4, 0x98FF, lsl 00 
-		bl paintLine
-		
-		//violet
-		mov x0, 172
-		movz x1, 261
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0x68, lsl 16
-	        movk x4, 0x32FF, lsl 00 
-		bl paintLine
-		
-		
-		// QUINTA COLUMNA
-		//rojo
-		mov x0, 127
-		movz x1, 176
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0x0000, lsl 00 
-		bl paintLine
-		
-		//orange
-		mov x0, 127
-		movz x1, 192
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0x9101, lsl 00 
-		bl paintLine
-		
-		//yellow
-		mov x0, 127
-		movz x1, 208
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0xFF00, lsl 00 
-		bl paintLine
-		
-		//green
-		mov x0, 127
-		movz x1, 224
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0x34, lsl 16
-	        movk x4, 0xFF00, lsl 00 
-		bl paintLine
-		
-		//celeste
-		mov x0, 127
-		movz x1, 240
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0x01, lsl 16
-	        movk x4, 0x98FF, lsl 00 
-		bl paintLine
-		
-		//violet
-		mov x0, 127
-		movz x1, 256
-		movz x2, 45
-		movz x3, 16
-		movz x4, 0x68, lsl 16
-	        movk x4, 0x32FF, lsl 00 
-		bl paintLine
-		
-		//violet
-		mov x0, 127
-		movz x1, 256
-		movz x2, 45
+		add x1, x8, 80
 		movz x3, 16
 		movz x4, 0x68, lsl 16
 	        movk x4, 0x32FF, lsl 00 
 		bl paintLine
 
+		ret
 	
 
 
