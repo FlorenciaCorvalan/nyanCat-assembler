@@ -50,6 +50,8 @@ main:
 
 		mov x7, 176
 		bl paintPopTart
+
+		bl paintLegsAndTail1
 		
 		//b animation
 	InfLoop: 
@@ -514,3 +516,1166 @@ main:
 		add sp, sp, #8 // Get original x30 from stack
 
 		ret
+
+		paintLegsAndTail1:
+			sub sp, sp, #8 //
+			str x30, [sp]		// Push x30 to stack
+			//CONTORNO
+			//Cola
+			movz x0, 231
+			movz x1, 213
+			movz x2, 22
+			movz x3, 6
+			movz x4, 0x00, lsl 16
+					movk x4, 0x0000, lsl 00
+			bl paintLine
+
+			movz x1, 219
+			movz x2, 6
+			movz x3, 10
+			bl paintLine
+
+			movz x0, 237
+			movz x1, 224
+			movz x2, 5
+			movz x3, 11
+			bl paintLine
+
+			movz x0, 242
+			movz x1, 229
+			movz x3, 11
+			bl paintLine
+
+			movz x0, 247
+			movz x1, 235
+			movz x2, 6
+			movz x3, 10
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 240
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 258
+			movz x1, 240
+			movz x2, 6
+			movz x3, 11
+			bl paintLine
+
+			movz x0, 247
+			movz x1, 219
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 224
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 258
+			movz x1, 229
+			movz x2, 6
+			movz x3, 6
+			bl paintLine
+
+			//Pata 1
+			movz x1, 261
+			movz x2, 16
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 267
+			movz x2, 6
+			movz x3, 16
+			bl paintLine
+
+			movz x1, 278
+			movz x2, 21
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 269
+			movz x1, 272
+			movz x2, 11
+			movz x3, 6
+			bl paintLine
+
+			//Pata 2
+			movz x0, 285
+			movz x1, 272
+			movz x2, 5
+			movz x3, 11
+			bl paintLine
+
+			movz x1, 278
+			movz x2, 16
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 301
+			movz x1, 272
+			movz x2, 6
+			movz x3, 6
+			bl paintLine
+
+			//Pata 3
+			movz x0, 333
+			movz x1, 272
+			movz x2, 6
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 339
+			movz x1, 278
+			movz x2, 16
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 350
+			movz x1, 272
+			movz x2, 5
+			movz x3, 6
+			bl paintLine
+
+			//Pata 4
+			movz x0, 360
+			movz x1, 272
+			movz x2, 6
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 366
+			movz x1, 278
+			movz x2, 10
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 376
+			movz x1, 272
+			movz x2, 6
+			movz x3, 6
+			bl paintLine
+
+			//RELLENO
+			//Cola
+			movz x0, 237
+			movz x1, 219
+			movz x2, 10
+			movz x3, 5
+			movz x4, 0x99, lsl 16
+					movk x4, 0x989A, lsl 00
+			bl paintLine
+
+			movz x0, 242
+			movz x1, 224
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 247
+			movz x1, 229
+			movz x2, 11
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 235
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			//Pata 1
+			movz x0, 258
+			movz x1, 267
+			movz x2, 11
+			movz x3, 11
+			bl paintLine
+
+			movz x0, 269
+			movz x1, 267
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			//Pata 2
+			movz x0, 290
+			movz x1, 272
+			movz x2, 11
+			movz x3, 6
+			bl paintLine
+
+			//Pata 3
+			movz x0, 339
+			movz x1, 272
+			movz x2, 11
+			movz x3, 6
+			bl paintLine
+
+			//Pata 4
+			movz x0, 366
+			movz x1, 272
+			movz x2, 11
+			movz x3, 6
+			bl paintLine
+
+			ldr x30, [sp] //
+			add sp, sp, #8 // Get original x30 from stack
+
+			ret
+
+		paintLegsAndTail2:
+			sub sp, sp, #8 //
+			str x30, [sp]		// Push x30 to stack
+			//CONTORNO
+			//Cola
+			movz x0, 237
+			movz x1, 219
+			movz x2, 10
+			movz x3, 5
+			movz x4, 0x00, lsl 16
+					movk x4, 0x0000, lsl 00
+			bl paintLine
+
+			movz x1, 235
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 231
+			movz x1, 224
+			movz x2, 6
+			movz x3, 11
+			bl paintLine
+
+			movz x0, 247
+			movz x1, 224
+			movz x2, 6
+			movz x3, 11
+			bl paintLine
+
+			movz x0, 242
+			movz x1, 240
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 229
+			movz x2, 11
+			movz x3, 6
+			bl paintLine
+
+			movz x1, 245
+			movz x3, 6
+			bl paintLine
+
+			//Pata 1
+			movz x0, 264
+			movz x1, 261
+			movz x2, 10
+			movz x3, 6
+			bl paintLine
+
+			movz x1, 278
+			movz x2, 10
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 258
+			movz x1, 267
+			movz x2, 6
+			movz x3, 16
+			bl paintLine
+
+			movz x0, 274
+			movz x1, 272
+			movz x2, 6
+			movz x3, 6
+			bl paintLine
+
+			//Pata 2
+			movz x0, 285
+			movz x1, 272
+			movz x2, 5
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 290
+			movz x1, 278
+			movz x2, 17
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 301
+			movz x1, 272
+			movz x2, 6
+			movz x3, 6
+			bl paintLine
+
+			//Pata 3
+			movz x0, 339
+			movz x1, 272
+			movz x2, 5
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 344
+			movz x1, 278
+			movz x2, 17
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 355
+			movz x1, 272
+			movz x2, 6
+			movz x3, 6
+			bl paintLine
+
+			//Pata 4
+			movz x0, 366
+			movz x1, 272
+			movz x2, 5
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 371
+			movz x1, 278
+			movz x2, 17
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 382
+			movz x1, 272
+			movz x2, 6
+			movz x3, 6
+			bl paintLine
+
+			//RELLENO
+			//Cola
+			movz x0, 237
+			movz x1, 224
+			movz x2, 10
+			movz x3, 11
+			movz x4, 0x99, lsl 16
+					movk x4, 0x989A, lsl 00
+			bl paintLine
+
+			movz x0, 242
+			movz x1, 235
+			movz x2, 22
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 240
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			//Pata 1
+			movz x0, 264
+			movz x1, 267
+			movz x2, 10
+			movz x3, 11
+			bl paintLine
+
+			//Pata 2
+			movz x0, 290
+			movz x1, 272
+			movz x2, 11
+			movz x3, 6
+			bl paintLine
+
+			//Pata 3
+			movz x0, 344
+			movz x1, 272
+			movz x2, 11
+			movz x3, 6
+			bl paintLine
+
+			//Pata 4
+			movz x0, 371
+			movz x1, 272
+			movz x2, 11
+			movz x3, 6
+			bl paintLine
+
+			ldr x30, [sp] //
+			add sp, sp, #8 // Get original x30 from stack
+
+			ret
+
+		paintLegsAndTail3:
+			sub sp, sp, #8 //
+			str x30, [sp]		// Push x30 to stack
+			//CONTORNO
+			//Cola
+			movz x0, 258
+			movz x1, 235
+			movz x2, 6
+			movz x3, 10
+			movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00
+			bl paintLine
+
+			movz x0, 242
+			movz x1, 240
+			movz x2, 16
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 231
+			movz x1, 245
+			movz x2, 11
+			movz x3, 6
+			bl paintLine
+
+			movz x1, 251
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 237
+			movz x1, 256
+			movz x2, 21
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 251
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			//Pata 1
+			movz x0, 264
+			movz x1, 267
+			movz x2, 10
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 264
+			movz x1, 272
+			movz x2, 5
+			movz x3, 11
+			bl paintLine
+
+			movz x1, 283
+			movz x2, 16
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 280
+			movz x1, 278
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			//Pata 2
+			movz x0, 290
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 296
+			movz x1, 283
+			movz x2, 16
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 307
+			movz x1, 278
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			//Pata 3
+			movz x0, 344
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 350
+			movz x1, 283
+			movz x2, 16
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 360
+			movz x1, 278
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			//Pata 4
+			movz x0, 371
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 376
+			movz x1, 283
+			movz x2, 16
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 387
+			movz x1, 278
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			//RELLENO
+			//Cola
+			movz x0, 242
+			movz x1, 245
+			movz x2, 22
+			movz x3, 6
+			movz x4, 0x99, lsl 16
+					movk x4, 0x989A, lsl 00
+			bl paintLine
+
+			movz x0, 237
+			movz x1, 251
+			movz x2, 16
+			movz x3, 5
+			bl paintLine
+
+			//Pata 1
+			movz x0, 269
+			movz x1, 272
+			movz x2, 5
+			movz x3, 11
+			bl paintLine
+
+			movz x0, 274
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			//Pata 2
+			movz x0, 296
+			movz x1, 278
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			//Pata 3
+			movz x0, 350
+			movz x1, 278
+			movz x3, 5
+			bl paintLine
+
+			//Pata 4
+			movz x0, 376
+			movz x1, 278
+			movz x3, 5
+			bl paintLine
+			
+			ldr x30, [sp] //
+			add sp, sp, #8 // Get original x30 from stack
+
+			ret
+
+		paintLegsAndTail4:
+			sub sp, sp, #8 //
+			str x30, [sp]		// Push x30 to stack
+			//CONTORNO
+			//Cola
+			movz x0, 253
+			movz x1, 235
+			movz x2, 11
+			movz x3, 5
+			movz x4, 0x00, lsl 16
+					movk x4, 0x0000, lsl 00
+			bl paintLine
+
+			movz x1, 251
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 242
+			movz x1, 240
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 237
+			movz x1, 245
+			movz x2, 5
+			movz x3, 6
+			bl paintLine
+
+			movz x1, 261
+			movz x2, 10
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 231
+			movz x1, 251
+			movz x2, 6
+			movz x3, 10
+			bl paintLine
+
+			movz x0, 247
+			movz x1, 251
+			movz x2, 6
+			movz x3, 10
+			bl paintLine
+
+			//Pata 1
+			movz x0, 264
+			movz x1, 267
+			movz x2, 10
+			movz x3, 5
+			bl paintLine
+
+			movz x1, 283
+			movz x2, 10
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 258
+			movz x1, 272
+			movz x2, 6
+			movz x3, 16
+			bl paintLine
+
+			movz x0, 274
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			//Pata 2
+			movz x0, 285
+			movz x1, 278
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 290
+			movz x1, 283
+			movz x2, 17
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 301
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			//Pata 3
+			movz x0, 339
+			movz x1, 278
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 344
+			movz x1, 283
+			movz x2, 17
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 355
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			//Pata 4
+			movz x0, 366
+			movz x1, 278
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 371
+			movz x1, 283
+			movz x2, 17
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 382
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			//RELLENO
+			//Cola
+			movz x0, 253
+			movz x1, 240
+			movz x2, 11
+			movz x3, 5
+			movz x4, 0x99, lsl 16
+					movk x4, 0x989A, lsl 00
+			bl paintLine
+
+			movz x0, 242
+			movz x1, 245
+			movz x2, 22
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 237
+			movz x1, 251
+			movz x2, 10
+			movz x3, 10
+			bl paintLine
+
+			//Pata 1
+			movz x0, 264
+			movz x1, 272
+			movz x2, 10
+			movz x3, 11
+			bl paintLine
+
+			//Pata 2
+			movz x0, 290
+			movz x1, 278
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			//Pata 3
+			movz x0, 344
+			movz x1, 278
+			movz x3, 5
+			bl paintLine
+
+			//Pata 4
+			movz x0, 371
+			movz x1, 278
+			movz x3, 5
+			bl paintLine
+
+			ldr x30, [sp] //
+			add sp, sp, #8 // Get original x30 from stack
+
+			ret
+
+		paintLegsAndTail5:
+			sub sp, sp, #8 //
+			str x30, [sp]		// Push x30 to stack
+			//CONTORNO
+			//Cola
+			movz x0, 231
+			movz x1, 224
+			movz x2, 22
+			movz x3, 5
+			movz x4, 0x00, lsl 16
+					movk x4, 0x0000, lsl 00
+			bl paintLine
+
+			movz x1, 235
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 226
+			movz x1, 229
+			movz x2, 5
+			movz x3, 11
+			bl paintLine
+
+			movz x0, 247
+			movz x1, 229
+			movz x2, 17
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 237
+			movz x1, 240
+			movz x2, 21
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 245
+			movz x2, 11
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 258
+			movz x1, 235
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			//Pata 1
+			movz x1, 261
+			movz x2, 6
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 267
+			movz x2, 21
+			movz x3, 5
+			bl paintLine
+
+			movz x1, 283
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 247
+			movz x1, 272
+			movz x2, 6
+			movz x3, 16
+			bl paintLine
+
+			movz x0, 264
+			movz x1, 278
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			//Pata 2
+			movz x0, 274
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 280
+			movz x1, 283
+			movz x2, 16
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 290
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			//Pata 3
+			movz x0, 328
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 333
+			movz x1, 283
+			movz x2, 16
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 344
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			//Pata 4
+			movz x0, 355
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 360
+			movz x1, 283
+			movz x2, 16
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 371
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			//RELLENO
+			//Cola
+			movz x0, 231
+			movz x1, 229
+			movz x2, 16
+			movz x3, 6
+			movz x4, 0x99, lsl 16
+					movk x4, 0x989A, lsl 00
+			bl paintLine
+
+			movz x0, 237
+			movz x1, 235
+			movz x2, 21
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 258
+			movz x1, 240
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			//Pata 1
+			movz x0, 253
+			movz x1, 272
+			movz x2, 16
+			movz x3, 6
+			bl paintLine
+
+			movz x1, 278
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			//Pata 2
+			movz x0, 280
+			movz x1, 278
+			movz x2, 10
+			movz x3, 5
+			bl paintLine
+
+			//Pata 3
+			movz x0, 333
+			movz x1, 278
+			movz x2, 10
+			movz x3, 5
+			bl paintLine
+
+			//Pata 4
+			movz x0, 360
+			movz x1, 278
+			movz x2, 10
+			movz x3, 5
+			bl paintLine
+
+			ldr x30, [sp] //
+			add sp, sp, #8 // Get original x30 from stack
+
+			ret
+
+			paintLegsAndTail6:
+			sub sp, sp, #8 //
+			str x30, [sp]		// Push x30 to stack
+			//CONTORNO
+			//Cola
+			movz x0, 237
+			movz x1, 219
+			movz x2, 10
+			movz x3, 5
+			movz x4, 0x00, lsl 16
+					movk x4, 0x0000, lsl 00
+			bl paintLine
+
+			movz x1, 235
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 231
+			movz x1, 224
+			movz x2, 6
+			movz x3, 11
+			bl paintLine
+
+			movz x0, 247
+			movz x1, 224
+			movz x2, 6
+			movz x3, 11
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 229
+			movz x2, 11
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 242
+			movz x1, 240
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 245
+			movz x2, 11
+			movz x3, 6
+			bl paintLine
+
+			//Pata 1
+			movz x0, 258
+			movz x1, 261
+			movz x2, 6
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 267
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			movz x1, 283
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 247
+			movz x1, 272
+			movz x2, 6
+			movz x3, 16
+			bl paintLine
+
+			movz x0, 264
+			movz x1, 267
+			movz x2, 10
+			movz x3, 5
+			bl paintLine
+
+			movz x1, 278
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 269
+			movz x1, 272
+			movz x2, 5
+			movz x3, 6
+			bl paintLine
+
+			//Pata 2
+			movz x0, 274
+			movz x1, 278
+			movz x2, 6
+			movz x3, 10
+			bl paintLine
+
+			movz x0, 280
+			movz x1, 283
+			movz x2, 10
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 290
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			//Pata 3
+			movz x0, 328
+			movz x1, 278
+			movz x2, 6
+			movz x3, 10
+			bl paintLine
+
+			movz x0, 333
+			movz x1, 283
+			movz x2, 10
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 344
+			movz x1, 278
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			//Pata 4
+			movz x0, 355
+			movz x1, 278
+			movz x2, 5
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 360
+			movz x1, 283
+			movz x2, 16
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 371
+			movz x1, 272
+			movz x2, 5
+			movz x3, 11
+			bl paintLine
+
+			//RELLENO
+			//Cola
+			movz x0, 237
+			movz x1, 224
+			movz x2, 10
+			movz x3, 11
+			movz x4, 0x99, lsl 16
+					movk x4, 0x989A, lsl 00
+			bl paintLine
+
+			movz x0, 242
+			movz x1, 235
+			movz x2, 22
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 240
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			//Pata 1
+			movz x0, 258
+			movz x1, 267
+			movz x2, 6
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 264
+			movz x1, 272
+			movz x2, 5
+			movz x3, 6
+			bl paintLine
+
+			movz x0, 253
+			movz x1, 272
+			movz x2, 11
+			movz x3, 11
+			bl paintLine
+
+			//Pata 2
+			movz x0, 280
+			movz x1, 278
+			movz x2, 10
+			movz x3, 5
+			bl paintLine
+
+			//Pata 3
+			movz x0, 333
+			movz x1, 278
+			movz x2, 10
+			movz x3, 5
+			bl paintLine
+
+			//Pata 4
+			movz x0, 360
+			movz x1, 278
+			movz x2, 11
+			movz x3, 5
+			bl paintLine
+
+			movz x0, 366
+			movz x1, 272
+			movz x2, 5
+			movz x3, 6
+			bl paintLine
+
+			ldr x30, [sp] //
+			add sp, sp, #8 // Get original x30 from stack
+
+			ret
+
