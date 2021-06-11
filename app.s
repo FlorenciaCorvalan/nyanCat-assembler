@@ -7,19 +7,49 @@
 main:
 	// X0 contiene la direccion base del framebuffer
 	mov x23, x0	// Save framebuffer base address to x23
-        mov x19, #0
-	
+
 	animation:
+		//FRAME 1
 		bl paintBackground
 
-		//mov x7, 176
-		//bl paintPopTart
+		mov x7, 0
+		mov x8, 181
+		bl paintRainbow1
 
-		//bl paintRainbow1
+		movz x7, 230
+		movz x8, 390
+		bl paintStar1
 
-		mov x7, 230
-		mov x8, 390
+		movz x7, 70
+		movz x8, 352
+		bl paintStar2
+
+		movz x7, 134
+		movz x8, 154
+		bl paintStar2
+
+		movz x7, 586
+		movz x8, 154
+		bl paintStar2
+
+		movz x7, 522
+		movz x8, 353
+		bl paintStar2
+
+		movz x7, 506
+		movz x8, 116
+		bl paintStar4
+
+		movz x7, 414
+		movz x8, 68
+		bl paintStar5
+
+		movz x7, 188
+		movz x8, 261
 		bl paintStar6
+
+		mov x7, 176
+		bl paintPopTart
 		
 		//b animation
 	InfLoop: 
@@ -27,44 +57,48 @@ main:
 	
 //----------------------------------funciones----------------------------------	
 	paintBackground:
-		mov x0, x23
-	
-		movz x2, 0x01, lsl 16
-	        movk x2, 0x3368, lsl 00   // azul
-		movz x1, 0xB000
-		movk x1, 0x4, lsl 16
-	
-	super_loop0:
-		stur x2,[x0]	   // Set color of pixel N
-	
-		add x0,x0,4	   // Next pixel
-		sub x1,x1,1	   // decrement X counter
-		cbnz x1,super_loop0	   // If not end row jump
+		sub sp, sp, #8
+		str x30, [sp]
+
+		movz x0, 0
+		movz x1, 0
+		movz x2, SCREEN_WIDTH
+		movz x3, SCREEN_HEIGH
+		movz x4, 0x01, lsl 16
+	        movk x4, 0x3368, lsl 00   // azul
+		bl paintLine
+
+		ldr x30, [sp]
+		add sp, sp, #8
+
 		ret
 	 
 	
 	paintLine: // x0: X, x1: Y, x2: W, x3: H, x4: Color
-	add x3, x3, #1
+		add x3, x3, #1
 	
-	paintLinefila: 
-		mov	   x5, SCREEN_WIDTH
-		mul    x5, x1, x5
-		add    x5, x5, x0
-		lsl	   x5, x5, #2
-		add    x5, x5, x23
-		mov    x6, x2
-	paintLinecolumna:
-			str x4, [x5]
-			add x5, x5, #4
-			sub x6, x6, #1
-			cbnz x6, paintLinecolumna
-		add x1, x1, #1
-		sub x3, x3, #1
-		cbnz x3, paintLinefila
-	
-		ret
+		paintLinefila: 
+			mov	   x5, SCREEN_WIDTH
+			mul    x5, x1, x5
+			add    x5, x5, x0
+			lsl	   x5, x5, #2
+			add    x5, x5, x23
+			mov    x6, x2
+		paintLinecolumna:
+				str w4, [x5]
+				add x5, x5, #4
+				sub x6, x6, #1
+				cbnz x6, paintLinecolumna
+			add x1, x1, #1
+			sub x3, x3, #1
+			cbnz x3, paintLinefila
+		
+			ret
 
 	paintPopTart:
+		sub sp, sp, #8 //
+		str x30, [sp]		// Push x30 to stack
+
 		//CONTORNO
 		movz x0, 274
 		mov x1, x7
@@ -189,20 +223,50 @@ main:
 		movz x3, 5
 		bl paintLine //cereza 10
 
+		ldr x30, [sp] //
+		add sp, sp, #8 // Get original x30 from stack
+
+		ret
+
 	paintRainbow1:
+		sub sp, sp, #8 //
+		str x30, [sp]		// Push x30 to stack
+
 		movz x7, 0
 		movz x8, 181
 		bl paintRainbowColumn
-		add x7, x7, 45
+		add x7, x7, 42
 		sub x8, x8, 5
 		bl paintRainbowColumn
+		add x7, x7, 42
+		add x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 42
+		sub x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 42
+		add x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 42
+		sub x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 42
+		add x8, x8, 5
+		bl paintRainbowColumn
+
+		ldr x30, [sp] //
+		add sp, sp, #8 // Get original x30 from stack
+
 		ret
 
 	paintRainbowColumn:
+		sub sp, sp, #8 //
+		str x30, [sp]		// Push x30 to stack
+
 		//rojo
 		mov x0, x7
 		mov x1, x8
-		movz x2, 45
+		movz x2, 42
 		movz x3, 16
 		movz x4, 0xFF, lsl 16
 	        movk x4, 0x0000, lsl 00 
@@ -243,9 +307,15 @@ main:
 	        movk x4, 0x32FF, lsl 00 
 		bl paintLine
 
+		ldr x30, [sp] //
+		add sp, sp, #8 // Get original x30 from stack
+
 		ret
 
 	paintStar1:
+		sub sp, sp, #8 //
+		str x30, [sp]		// Push x30 to stack
+
 		mov x0, x7
 		mov x1, x8
 		movz x2, 6
@@ -253,9 +323,16 @@ main:
 		movz x4, 0xFF, lsl 16
 					movk x4, 0xFFFF, lsl 00
 		bl paintLine
+
+		ldr x30, [sp] //
+		add sp, sp, #8 // Get original x30 from stack
+
 		ret
 
 	paintStar2:
+		sub sp, sp, #8 //
+		str x30, [sp]		// Push x30 to stack
+
 		mov x0, x7
 		mov x1, x8
 		movz x2, 5
@@ -278,9 +355,16 @@ main:
 		add x1, x8, 5
 		movz x3, 6
 		bl paintLine
+
+		ldr x30, [sp] //
+		add sp, sp, #8 // Get original x30 from stack
+
 		ret
 
 	paintStar3:
+		sub sp, sp, #8 //
+		str x30, [sp]		// Push x30 to stack
+
 		mov x0, x7
 		mov x1, x8
 		movz x2, 6
@@ -303,9 +387,16 @@ main:
 		add x1, x8, 10
 		movz x3, 6
 		bl paintLine
+
+		ldr x30, [sp] //
+		add sp, sp, #8 // Get original x30 from stack
+
 		ret
 
 	paintStar4:
+		sub sp, sp, #8 //
+		str x30, [sp]		// Push x30 to stack
+
 		mov x0, x7
 		mov x1, x8
 		movz x2, 6
@@ -332,9 +423,16 @@ main:
 		add x1, x8, 16
 		movz x3, 6
 		bl paintLine
+
+		ldr x30, [sp] //
+		add sp, sp, #8 // Get original x30 from stack
+
 		ret
 
 	paintStar5:
+		sub sp, sp, #8 //
+		str x30, [sp]		// Push x30 to stack
+
 		mov x0, x7
 		mov x1, x8
 		movz x2, 5
@@ -380,9 +478,16 @@ main:
 		movz x2, 5
 		movz x3, 6
 		bl paintLine
+
+		ldr x30, [sp] //
+		add sp, sp, #8 // Get original x30 from stack
+
 		ret
 
 	paintStar6:
+		sub sp, sp, #8 //
+		str x30, [sp]		// Push x30 to stack
+
 		mov x0, x7
 		mov x1, x8
 		movz x2, 5
@@ -404,18 +509,8 @@ main:
 		add x1, x8, 16
 		movz x3, 6
 		bl paintLine
+
+		ldr x30, [sp] //
+		add sp, sp, #8 // Get original x30 from stack
+
 		ret
-
-
-
-
-
-		
-
-
-	
-
-
-
-
-
