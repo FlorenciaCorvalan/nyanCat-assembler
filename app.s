@@ -12,10 +12,14 @@ main:
 	animation:
 		bl paintBackground
 
-		mov x7, 176
-		bl paintPopTart
+		//mov x7, 176
+		//bl paintPopTart
 
-		bl paintRainbow1
+		//bl paintRainbow1
+
+		mov x7, 230
+		mov x8, 390
+		bl paintStar6
 		
 		//b animation
 	InfLoop: 
@@ -240,6 +244,175 @@ main:
 		bl paintLine
 
 		ret
+
+	paintStar1:
+		mov x0, x7
+		mov x1, x8
+		movz x2, 6
+		movz x3, 6
+		movz x4, 0xFF, lsl 16
+					movk x4, 0xFFFF, lsl 00
+		bl paintLine
+		ret
+
+	paintStar2:
+		mov x0, x7
+		mov x1, x8
+		movz x2, 5
+		movz x3, 5
+		movz x4, 0xFF, lsl 16
+					movk x4, 0xFFFF, lsl 00
+		bl paintLine
+
+		add x1, x8, 11
+		movz x3, 5
+		bl paintLine
+
+		sub x0, x7, 6
+		add x1, x8, 5
+		movz x2, 6
+		movz x3, 6
+		bl paintLine
+
+		add x0, x7, 5
+		add x1, x8, 5
+		movz x3, 6
+		bl paintLine
+		ret
+
+	paintStar3:
+		mov x0, x7
+		mov x1, x8
+		movz x2, 6
+		movz x3, 10
+		movz x4, 0xFF, lsl 16
+					movk x4, 0xFFFF, lsl 00
+		bl paintLine
+
+		add x1, x8, 16
+		movz x3, 10
+		bl paintLine
+
+		sub x0, x7, 10
+		add x1, x8, 10
+		movz x2, 10
+		movz x3, 6
+		bl paintLine
+		
+		add x0, x7, 6
+		add x1, x8, 10
+		movz x3, 6
+		bl paintLine
+		ret
+
+	paintStar4:
+		mov x0, x7
+		mov x1, x8
+		movz x2, 6
+		movz x3, 11
+		movz x4, 0xFF, lsl 16
+					movk x4, 0xFFFF, lsl 00
+		bl paintLine
+		
+		add x1, x8, 16
+		movz x3, 6
+		bl paintLine
+		
+		add x1, x8, 27
+		movz x3, 11
+		bl paintLine
+		
+		sub x0, x7, 16
+		add x1, x8, 16
+		movz x2, 11
+		movz x3, 6
+		bl paintLine
+
+		add x0, x7, 11
+		add x1, x8, 16
+		movz x3, 6
+		bl paintLine
+		ret
+
+	paintStar5:
+		mov x0, x7
+		mov x1, x8
+		movz x2, 5
+		movz x3, 6
+		movz x4, 0xFF, lsl 16
+					movk x4, 0xFFFF, lsl 00
+		bl paintLine
+		
+		add x1, x8, 33
+		movz x3, 5
+		bl paintLine
+		
+		add x0, x7, 11
+		add x1, x8, 6
+		movz x3, 5
+		bl paintLine
+		
+		add x0, x7, 11
+		add x1, x8, 27
+		movz x3, 6
+		bl paintLine
+		
+		add x0, x7, 16
+		add x1, x8, 16
+		movz x2, 6
+		movz x3, 6
+		bl paintLine
+		
+		sub x0, x7, 11
+		add x1, x8, 6
+		movz x2, 6
+		movz x3, 5
+		bl paintLine
+		
+		sub x0, x7, 11
+		add x1, x8, 27
+		movz x2, 6
+		movz x3, 6
+		bl paintLine
+		
+		sub x0, x7, 16
+		add x1, x8, 16
+		movz x2, 5
+		movz x3, 6
+		bl paintLine
+		ret
+
+	paintStar6:
+		mov x0, x7
+		mov x1, x8
+		movz x2, 5
+		movz x3, 6
+		movz x4, 0xFF, lsl 16
+					movk x4, 0xFFFF, lsl 00
+		bl paintLine
+
+		add x1, x8, 33
+		movz x3, 5
+		bl paintLine
+		
+		sub x0, x7, 16
+		add x1, x8, 16
+		movz x3, 6
+		bl paintLine
+
+		add x0, x7, 16
+		add x1, x8, 16
+		movz x3, 6
+		bl paintLine
+		ret
+
+
+
+
+
+		
+
+
 	
 
 
