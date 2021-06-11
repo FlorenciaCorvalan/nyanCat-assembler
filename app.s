@@ -12,9 +12,7 @@ main:
 		//FRAME 1
 		bl paintBackground
 
-		mov x7, 0
-		mov x8, 181
-		bl paintRainbow1
+		bl paintRainbow4
 
 		movz x7, 230
 		movz x8, 390
@@ -236,24 +234,126 @@ main:
 
 		movz x7, 0
 		movz x8, 181
+		movz x9, 43
 		bl paintRainbowColumn
-		add x7, x7, 42
+		add x7, x7, 43
 		sub x8, x8, 5
 		bl paintRainbowColumn
-		add x7, x7, 42
+		add x7, x7, 43
 		add x8, x8, 5
 		bl paintRainbowColumn
-		add x7, x7, 42
+		add x7, x7, 43
 		sub x8, x8, 5
 		bl paintRainbowColumn
-		add x7, x7, 42
+		add x7, x7, 43
 		add x8, x8, 5
 		bl paintRainbowColumn
-		add x7, x7, 42
+		add x7, x7, 43
 		sub x8, x8, 5
 		bl paintRainbowColumn
-		add x7, x7, 42
+		add x7, x7, 43
 		add x8, x8, 5
+		movz x9, 11
+		bl paintRainbowColumn
+
+		ldr x30, [sp] //
+		add sp, sp, #8 // Get original x30 from stack
+
+		ret
+
+	paintRainbow2:
+		sub sp, sp, #8 //
+		str x30, [sp]		// Push x30 to stack
+
+		movz x7, 0
+		movz x8, 181
+		movz x9, 38
+		bl paintRainbowColumn
+		add x7, x7, 38
+		sub x8, x8, 5
+		movz x9, 43
+		bl paintRainbowColumn
+		add x7, x7, 43
+		add x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 43
+		sub x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 43
+		add x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 43
+		sub x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 43
+		add x8, x8, 5
+		movz x9, 16
+		bl paintRainbowColumn
+
+		ldr x30, [sp] //
+		add sp, sp, #8 // Get original x30 from stack
+
+		ret
+
+	paintRainbow3:
+		sub sp, sp, #8 //
+		str x30, [sp]		// Push x30 to stack
+
+		movz x7, 0
+		movz x8, 176
+		movz x9, 43
+		bl paintRainbowColumn
+		add x7, x7, 43
+		add x8, x8, 5
+		movz x9, 43
+		bl paintRainbowColumn
+		add x7, x7, 43
+		sub x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 43
+		add x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 43
+		sub x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 43
+		add x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 43
+		sub x8, x8, 5
+		bl paintRainbowColumn
+
+		ldr x30, [sp] //
+		add sp, sp, #8 // Get original x30 from stack
+
+		ret
+
+	paintRainbow4:
+		sub sp, sp, #8 //
+		str x30, [sp]		// Push x30 to stack
+
+		movz x7, 0
+		movz x8, 176
+		movz x9, 38
+		bl paintRainbowColumn
+		add x7, x7, 38
+		add x8, x8, 5
+		movz x9, 43
+		bl paintRainbowColumn
+		add x7, x7, 43
+		sub x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 43
+		add x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 43
+		sub x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 43
+		add x8, x8, 5
+		bl paintRainbowColumn
+		add x7, x7, 43
+		sub x8, x8, 5
 		bl paintRainbowColumn
 
 		ldr x30, [sp] //
@@ -268,7 +368,7 @@ main:
 		//rojo
 		mov x0, x7
 		mov x1, x8
-		movz x2, 42
+		mov x2, x9
 		movz x3, 16
 		movz x4, 0xFF, lsl 16
 	        movk x4, 0x0000, lsl 00 
