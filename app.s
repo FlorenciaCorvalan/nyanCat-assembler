@@ -68,6 +68,11 @@ main:
 		//Cola y patas
 		bl paintLegsAndTail1
 
+		//Cabeza
+		mov x7, 323
+		mov x8, 208
+		bl paintCatHead
+
 		//DELAY
 		bl delay
 
@@ -133,12 +138,7 @@ main:
 		movz x8, 116
 		bl paintStar5
 
-		/* //Estrella 11
-		movz x7, 5
-		movz x8, 116
-		bl paintStar5 */
-
-		//Estrella 12
+		//Estrella 11
 		movz x7, 366
 		movz x8, 69
 		bl paintStar6
@@ -149,6 +149,11 @@ main:
 
 		//Cola y patas
 		bl paintLegsAndTail2
+
+		//Cabeza
+		mov x7, 328
+		mov x8, 208
+		bl paintCatHead
 
 		//DELAY
 		bl delay
@@ -221,6 +226,11 @@ main:
 
 		//Cola y patas
 		bl paintLegsAndTail3
+
+		//Cabeza
+		mov x7, 328
+		mov x8, 213
+		bl paintCatHead
 
 		//DELAY
 		bl delay
@@ -299,6 +309,11 @@ main:
 		//Cola y patas
 		bl paintLegsAndTail4
 
+		//Cabeza
+		mov x7, 328
+		mov x8, 213
+		bl paintCatHead
+
 		//DELAY
 		bl delay
 
@@ -376,6 +391,11 @@ main:
 		//Cola y patas
 		bl paintLegsAndTail5
 
+		//Cabeza
+		mov x7, 323
+		mov x8, 213
+		bl paintCatHead
+
 		//DELAY
 		bl delay
 
@@ -441,7 +461,7 @@ main:
 		movz x8, 374
 		bl paintStar6
 
-		//Estrella 11
+		//Estrella 12
 		movz x7, 489
 		movz x8, 374
 		bl paintStar6
@@ -452,6 +472,11 @@ main:
 
 		//Cola y patas
 		bl paintLegsAndTail6
+
+		//Cabeza
+		mov x7, 323
+		mov x8, 208
+		bl paintCatHead
 
 		//DELAY
 		bl delay
@@ -525,6 +550,11 @@ main:
 		//Cola y patas
 		bl paintLegsAndTail1
 
+		//Cabeza
+		mov x7, 323
+		mov x8, 208
+		bl paintCatHead
+
 		//DELAY
 		bl delay
 
@@ -597,6 +627,11 @@ main:
 		//Cola y patas
 		bl paintLegsAndTail2
 
+		//Cabeza
+		mov x7, 328
+		mov x8, 208
+		bl paintCatHead
+
 		//DELAY
 		bl delay
 
@@ -668,6 +703,11 @@ main:
 
 		//Cola y patas
 		bl paintLegsAndTail3
+
+		//Cabeza
+		mov x7, 328
+		mov x8, 213
+		bl paintCatHead
 
 		//DELAY
 		bl delay
@@ -746,6 +786,11 @@ main:
 		//Cola y patas
 		bl paintLegsAndTail4
 
+		//Cabeza
+		mov x7, 328
+		mov x8, 213
+		bl paintCatHead
+
 		//DELAY
 		bl delay
 
@@ -823,6 +868,11 @@ main:
 		//Cola y patas
 		bl paintLegsAndTail5
 
+		//Cabeza
+		mov x7, 323
+		mov x8, 213
+		bl paintCatHead
+
 		//DELAY
 		bl delay
 
@@ -894,6 +944,11 @@ main:
 
 		//Cola y patas
 		bl paintLegsAndTail6
+
+		//Cabeza
+		mov x7, 323
+		mov x8, 208
+		bl paintCatHead
 
 		//DELAY
 		bl delay
@@ -2632,4 +2687,260 @@ paintLegsAndTail6:
 	ldr x30, [sp] //
 	add sp, sp, #8 // Get original x30 from stack
 
+	ret
+
+paintCatHead:
+	sub sp, sp, #8 //
+	str x30, [sp]		// Push x30 to stack
+
+	mov x0, x7
+	mov x1, x8
+	movz x2, 5
+	movz x3, 20
+	movz x4, 0x00, lsl 16
+				movk x4, 0x0000, lsl 00 
+	bl paintLine 
+	
+	add x0, x7, 0
+	add x1, x8, 21
+	movz x2, 75
+	movz x3, 26
+	movz x4, 0x99, lsl 16
+				movk x4, 0x989A, lsl 00 
+	bl paintLine 
+	
+	add x0, x7, 10
+	add x1, x8, 53
+	movz x2, 54
+	movz x3, 5
+	bl paintLine 
+	
+	add x0, x7, 16
+	add x1, x8, 5
+	movz x2, 5
+	movz x3, 7
+	bl paintLine
+	
+	
+	add x0, x7, 5
+	add x1, x8, 11
+	movz x2, 20
+	movz x3, 7
+	bl paintLine
+	
+	add x0, x7, 53
+	add x1, x8, 5
+	movz x2, 20
+	movz x3, 16
+	bl paintLine 
+	
+	add x0, x7, 59
+	add x1, x8, 0
+	movz x2, 12
+	movz x3, 6
+	bl paintLine 
+	
+	add x0, x7, 5
+	add x1, x8, 48
+	movz x2, 65
+	movz x3, 5
+	bl paintLine 
+	
+	
+	add x0, x7, 5
+	sub x1, x8, 6
+	movz x2, 10
+	movz x3, 5
+	movz x4, 0x00, lsl 16
+				movk x4, 0x0000, lsl 00 //negro
+	bl paintLine 
+	
+	add x0, x7, 15
+	sub x1, x8, 1
+	movz x2, 5
+	movz x3, 5
+	bl paintLine 
+	
+	add x0, x7, 19
+	add x1, x8, 5
+	movz x2, 6
+	movz x3, 6
+	bl paintLine 
+	
+	add x0, x7, 25
+	add x1, x8, 10
+	movz x2, 27
+	movz x3, 5
+	bl paintLine
+
+	add x0, x7, 50
+	mov x1, x8
+	mov x2, 5
+	mov x3, 11
+	bl paintLine
+	
+	add x0, x7, 53
+	add x1, x8, 0
+	movz x2, 6
+	movz x3, 5
+	bl paintLine 
+	
+	add x0, x7, 16
+	add x1, x8, 27
+	movz x2, 5
+	movz x3, 5
+	movz x4, 0xFF, lsl 16
+				movk x4, 0xFFFF, lsl 00 
+	bl paintLine 
+	
+	add x0, x7, 53
+	add x1, x8, 27
+	movz x2, 5
+	movz x3, 5
+	bl paintLine 
+	
+	add x0, x7, 53
+	add x1, x8, 32
+	movz x2, 6
+	movz x3, 5
+	movz x4, 0x00, lsl 16
+				movk x4, 0x0000, lsl 00 
+	bl paintLine
+	
+	add x0, x7, 21
+	add x1, x8, 27
+	movz x2, 6
+	movz x3, 10
+	bl paintLine
+	
+	add x0, x7, 58
+	add x1, x8, 27
+	movz x2, 6
+	movz x3, 10
+	bl paintLine 
+	
+	sub x0, x7, 6
+	add x1, x8, 21
+	movz x2, 6
+	movz x3, 26
+	bl paintLine 
+	
+	add x0, x7, 16
+	add x1, x8, 32
+	movz x2, 5
+	movz x3, 5
+	bl paintLine
+	
+	add x0, x7, 0
+	add x1, x8, 48
+	movz x2, 5
+	movz x3, 5
+	bl paintLine 
+	
+	add x0, x7, 5
+	add x1, x8, 53
+	movz x2, 5
+	movz x3, 6
+	bl paintLine 
+	
+	add x0, x7, 21
+	add x1, x8, 48
+	movz x2, 38
+	movz x3, 5
+	bl paintLine 
+	
+	add x0, x7, 43
+	add x1, x8, 32
+	movz x2, 5
+	movz x3, 5
+	bl paintLine 
+	
+	add x0, x7, 5
+	add x1, x8, 0
+	movz x2, 11
+	movz x3, 26
+	movz x4, 0x99, lsl 16
+				movk x4, 0x989A, lsl 00 //negro
+	bl paintLine 
+	
+	add x0, x7, 16
+	add x1, x8, 16
+	movz x2, 53
+	movz x3, 11
+	bl paintLine 
+	
+	
+	add x0, x7, 21
+	add x1, x8, 43
+	movz x2, 6
+	movz x3, 5
+	movz x4, 0x00, lsl 16
+				movk x4, 0x0000, lsl 00 //negro
+	bl paintLine 
+	
+	add x0, x7, 37
+	add x1, x8, 43
+	movz x2, 6
+	movz x3, 5
+	bl paintLine 
+	
+	add x0, x7, 53
+	add x1, x8, 43
+	movz x2, 6
+	movz x3, 5
+	bl paintLine
+	
+	add x0, x7, 59
+	sub x1, x8, 6
+	movz x2, 11
+	movz x3, 6
+	bl paintLine
+	
+	add x0, x7, 70
+	sub x1, x8, 0
+	movz x2, 5
+	movz x3, 20
+	bl paintLine
+	
+	add x0, x7, 75
+	add x1, x8, 21
+	movz x2, 5
+	movz x3, 26
+	bl paintLine
+	
+	add x0, x7, 70
+	add x1, x8, 48
+	movz x2, 5
+	movz x3, 5
+	bl paintLine
+	
+	add x0, x7, 64
+	add x1, x8, 53
+	movz x2, 6
+	movz x3, 6
+	bl paintLine
+	
+	add x0, x7, 10
+	add x1, x8, 59
+	movz x2, 54
+	movz x3, 5
+	bl paintLine
+	
+	add x0, x7, 5
+	add x1, x8, 38
+	movz x2, 12
+	movz x3, 11
+	movz x4, 0xFF, lsl 16
+				movk x4, 0x989D, lsl 00 
+	bl paintLine
+	
+	add x0, x7, 64
+	add x1, x8, 37
+	movz x2, 11
+	movz x3, 11
+	bl paintLine
+	
+	ldr x30, [sp] //
+	add sp, sp, #8 // Get original x30 from stack
+	
 	ret
