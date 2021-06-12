@@ -543,134 +543,366 @@ main:
 		
 //----------------------------------------------------------------------------------------------------------------------
 
-
-
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//CABEZA DEL GATO
 
 catHead:
+	       sub sp, sp, #8 //
+		str x30, [sp]		// Push x30 to stack
+
+		//CONTORNO
+		mov x0, x7
+		mov x1, x8
+		movz x2, 5
+		movz x3, 20
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 
+		bl paintLine 
 		
-		movz x0, 366
-		add x1, x7, 5
+		add x0, x7, 0
+		add x1, x8, 21
+		movz x2, 75
+		movz x3, 26
+		movz x4, 0x99, lsl 16
+	        movk x4, 0x989A, lsl 00 
+		bl paintLine 
+		
+		add x0, x7, 10
+		add x1, x8, 53
+		movz x2, 54
 		movz x3, 5
-		bl paintLine //vertice arriba derecha
-		movz x0, 264
-		add x1, x7, 10
-		movz x3, 75
-		bl paintLine //contorno izquierda
-		movz x0, 371
-		add x1, x7, 10
-		movz x3, 75
-		bl paintLine //contorno derecha
-
-		//MASA
-		movz x0, 274
-		add x1, x7, 5
-		movz x2, 92
+		movz x4, 0x99, lsl 16
+	        movk x4, 0x989A, lsl 00 
+		bl paintLine 
+		
+		add x0, x7, 16
+		add x1, x8, 5
+		movz x2, 15
+		movz x3, 20
+		movz x4, 0x99, lsl 16   //NO SE PINTA EL CUADRADO
+	        movk x4, 0x989A
+	        
+	        add x0, x7, 16
+		add x1, x8, 5
+		movz x2, 7
+		movz x3, 7
+		movz x4, 0x99, lsl 16
+	        movk x4, 0x989A
+		
+		
+		add x0, x7, 5
+		add x1, x8, 11
+		movz x2, 20
+		movz x3, 7
+		movz x4, 0x99, lsl 16
+	        movk x4, 0x989A, lsl 00 
+		bl paintLine
+		
+		add x0, x7, 53
+		add x1, x8, 5
+		movz x2, 20
+		movz x3, 16
+		movz x4, 0x99, lsl 16
+	        movk x4, 0x989A, lsl 00 
+		bl paintLine 
+		
+		add x0, x7, 59
+		add x1, x8, 0
+		movz x2, 12
+		movz x3, 6
+		movz x4, 0x99, lsl 16
+	        movk x4, 0x989A, lsl 00 
+		bl paintLine 
+		
+		add x0, x7, 5
+		add x1, x8, 48
+		movz x2, 65
 		movz x3, 5
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0xCB9B, lsl 00 //color masa
-		bl paintLine //linea de arriba
-		add x1, x7, 85
+		movz x4, 0x99, lsl 16
+	        movk x4, 0x989A, lsl 00 //negro
+		bl paintLine 
+		
+		
+		add x0, x7, 5
+		sub x1, x8, 6
+		movz x2, 10
 		movz x3, 5
-		bl paintLine //linea de abajo
-		movz x0, 269
-		add x1, x7, 10
-		movz x2, 102
-		movz x3, 75
-		bl paintLine //cuerpo
-
-		//CREMA
-		movz x0, 285
-		add x1, x7, 10
-		movz x2, 70
-		movz x3, 5
-		movz x4, 0xFF, lsl 16
-	        movk x4, 0x98FF, lsl 00 //color crema
-		bl paintLine //linea de arriba 1
-		add x1, x7, 80
-		movz x3, 5
-		bl paintLine //linea de abajo 1
-		movz x0, 280
-		add x1, x7, 15
-		movz x2, 80
-		movz x3, 5
-		bl paintLine //linea de arriba 2
-		add x1, x7, 75
-		movz x3, 5
-		bl paintLine //linea de abajo 2
-		movz x0, 274
-		add x1, x7, 20
-		movz x2, 92
-		movz x3, 60
-		bl paintLine //cuerpo
-
-		//CEREZAS
-		movz x0, 285
-		add x1, x7, 20
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine //contorno arriba
+		
+		add x0, x7, 15
+		sub x1, x8, 1
 		movz x2, 5
 		movz x3, 5
-		movz x4, 0xFE, lsl 16
-	        movk x4, 0x329E, lsl 00 //color cereza
-		bl paintLine //cereza 1
-		movz x0, 312
-		add x1, x7, 16
-		movz x3, 5
-		bl paintLine //cereza 2
-		movz x0, 328
-		add x1, x7, 16
-		movz x3, 5
-		bl paintLine //cereza 3
-		movz x0, 350
-		add x1, x7, 26
-		movz x3, 6
-		bl paintLine //cereza 4
-		movz x0, 307
-		add x1, x7, 37
-		movz x3, 6
-		bl paintLine //cereza 5
-		movz x0, 290
-		add x1, x7, 48
-		movz x2, 6
-		movz x3, 5
-		bl paintLine //cereza 6
-		movz x0, 312
-		add x1, x7, 53
-		movz x2, 5
-		movz x3, 6
-		bl paintLine //cereza 7
-		movz x0, 279
-		add x1, x7, 59
-		movz x3, 5
-		bl paintLine //cereza 8
-		movz x0, 301
-		add x1, x7, 69
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine //contorno arriba
+		
+		add x0, x7, 19
+		add x1, x8, 5
 		movz x2, 6
 		movz x3, 6
-		bl paintLine //cereza 9
-		movz x0, 285
-		add x1, x7, 75
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine //contorno arriba
+		
+		add x0, x7, 25
+		add x1, x8, 10
+		movz x2, 25
+		movz x3, 5
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine //contorno arriba
+		
+		add x0, x7, 53
+		add x1, x8, 0
+		movz x2, 6
+		movz x3, 5
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine //contorno arriba
+		
+		add x0, x7, 16
+		add x1, x8, 27
 		movz x2, 5
 		movz x3, 5
-		bl paintLine //cereza 10
+		movz x4, 0xFF, lsl 16
+	        movk x4, 0xFFFF, lsl 00 //negro
+		bl paintLine //contorno arriba
 		
+		add x0, x7, 53
+		add x1, x8, 27
+		movz x2, 5
+		movz x3, 5
+		movz x4, 0xFF, lsl 16
+	        movk x4, 0xFFFF, lsl 00 
+		bl paintLine 
+		
+		add x0, x7, 53
+		add x1, x8, 32
+		movz x2, 6
+		movz x3, 5
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 
+		bl paintLine
+		
+		add x0, x7, 21
+		add x1, x8, 27
+		movz x2, 6
+		movz x3, 10
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine
+		
+		add x0, x7, 58
+		add x1, x8, 27
+		movz x2, 6
+		movz x3, 10
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine 
+		
+		sub x0, x7, 6
+		add x1, x8, 21
+		movz x2, 6
+		movz x3, 26
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine 
+		
+		add x0, x7, 16
+		add x1, x8, 32
+		movz x2, 5
+		movz x3, 5
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine
+		
+		add x0, x7, 0
+		add x1, x8, 48
+		movz x2, 5
+		movz x3, 5
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine 
+		
+		add x0, x7, 5
+		add x1, x8, 53
+		movz x2, 5
+		movz x3, 6
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine 
+		
+		add x0, x7, 21
+		add x1, x8, 48
+		movz x2, 38
+		movz x3, 5
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine 
+		
+		add x0, x7, 43
+		add x1, x8, 32
+		movz x2, 5
+		movz x3, 5
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine 
+		
+		add x0, x7, 5
+		add x1, x8, 0
+		movz x2, 11
+		movz x3, 26
+		movz x4, 0x99, lsl 16
+	        movk x4, 0x989A, lsl 00 //negro
+		bl paintLine //contorno arriba
+		
+		add x0, x7, 16
+		add x1, x8, 16
+		movz x2, 53
+		movz x3, 11
+		movz x4, 0x99, lsl 16
+	        movk x4, 0x989A, lsl 00 //negro
+		bl paintLine 
+		
+		add x0, x7, 27
+		add x1, x8, 27
+		movz x2, 16
+		movz x3, 15
+		movz x4, 0x99, lsl 16
+	        movk x4, 0x989A, lsl 00 //negro
+		bl paintLine 
+		
+		add x0, x7, 43
+		add x1, x8, 27
+		movz x2, 10
+		movz x3, 5
+		movz x4, 0x99, lsl 16
+	        movk x4, 0x989A, lsl 00 //negro
+		bl paintLine 
+		
+		add x0, x7, 48
+		add x1, x8, 32
+		movz x2, 6
+		movz x3, 15
+		movz x4, 0x99, lsl 16
+	        movk x4, 0x989A, lsl 00 //negro
+		bl paintLine 
+		
+		add x0, x7, 21
+		add x1, x8, 43
+		movz x2, 6
+		movz x3, 5
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine 
+		
+		add x0, x7, 37
+		add x1, x8, 43
+		movz x2, 6
+		movz x3, 5
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine 
+		
+		add x0, x7, 53
+		add x1, x8, 43
+		movz x2, 6
+		movz x3, 5
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine
+		
+		add x0, x7, 59
+		sub x1, x8, 6
+		movz x2, 11
+		movz x3, 6
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine
+		
+		add x0, x7, 70
+		sub x1, x8, 0
+		movz x2, 5
+		movz x3, 20
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine
+		
+		add x0, x7, 75
+		add x1, x8, 21
+		movz x2, 5
+		movz x3, 26
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine
+		
+		add x0, x7, 70
+		add x1, x8, 48
+		movz x2, 5
+		movz x3, 5
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine
+		
+		add x0, x7, 64
+		add x1, x8, 53
+		movz x2, 6
+		movz x3, 6
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 //negro
+		bl paintLine
+		
+		add x0, x7, 42
+		add x1, x8, 59
+		movz x2, 23
+		movz x3, 5
+		movz x4, 0x00, lsl 16
+	        movk x4, 0x0000, lsl 00 
+		bl paintLine
+		
+		add x0, x7, 5
+		add x1, x8, 38
+		movz x2, 12
+		movz x3, 11
+		movz x4, 0xFF, lsl 16
+	        movk x4, 0x989D, lsl 00 
+		bl paintLine
+		
+		add x0, x7, 64
+		add x1, x8, 37
+		movz x2, 11
+		movz x3, 11
+		movz x4, 0xFF, lsl 16
+	        movk x4, 0x989D, lsl 00 
+		bl paintLine
+		
+		ldr x30, [sp] //
+		add sp, sp, #8 // Get original x30 from stack
+		
+		ret
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
