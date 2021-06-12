@@ -628,47 +628,47 @@ catHead:
 		movz x3, 5
 		movz x4, 0x00, lsl 16
 	        movk x4, 0x0000, lsl 00 //negro
-		bl paintLine //contorno arriba
+		bl paintLine 
 		
 		add x0, x7, 15
 		sub x1, x8, 1
 		movz x2, 5
 		movz x3, 5
 		movz x4, 0x00, lsl 16
-	        movk x4, 0x0000, lsl 00 //negro
-		bl paintLine //contorno arriba
+	        movk x4, 0x0000, lsl 00 
+		bl paintLine 
 		
 		add x0, x7, 19
 		add x1, x8, 5
 		movz x2, 6
 		movz x3, 6
 		movz x4, 0x00, lsl 16
-	        movk x4, 0x0000, lsl 00 //negro
-		bl paintLine //contorno arriba
+	        movk x4, 0x0000, lsl 00 
+		bl paintLine 
 		
 		add x0, x7, 25
 		add x1, x8, 10
 		movz x2, 25
 		movz x3, 5
 		movz x4, 0x00, lsl 16
-	        movk x4, 0x0000, lsl 00 //negro
-		bl paintLine //contorno arriba
+	        movk x4, 0x0000, lsl 00 
+		bl paintLine 
 		
 		add x0, x7, 53
 		add x1, x8, 0
 		movz x2, 6
 		movz x3, 5
 		movz x4, 0x00, lsl 16
-	        movk x4, 0x0000, lsl 00 //negro
-		bl paintLine //contorno arriba
+	        movk x4, 0x0000, lsl 00 
+		bl paintLine 
 		
 		add x0, x7, 16
 		add x1, x8, 27
 		movz x2, 5
 		movz x3, 5
 		movz x4, 0xFF, lsl 16
-	        movk x4, 0xFFFF, lsl 00 //negro
-		bl paintLine //contorno arriba
+	        movk x4, 0xFFFF, lsl 00 
+		bl paintLine 
 		
 		add x0, x7, 53
 		add x1, x8, 27
@@ -756,7 +756,7 @@ catHead:
 		movz x3, 26
 		movz x4, 0x99, lsl 16
 	        movk x4, 0x989A, lsl 00 //negro
-		bl paintLine //contorno arriba
+		bl paintLine 
 		
 		add x0, x7, 16
 		add x1, x8, 16
@@ -766,29 +766,6 @@ catHead:
 	        movk x4, 0x989A, lsl 00 //negro
 		bl paintLine 
 		
-		add x0, x7, 27
-		add x1, x8, 27
-		movz x2, 16
-		movz x3, 15
-		movz x4, 0x99, lsl 16
-	        movk x4, 0x989A, lsl 00 //negro
-		bl paintLine 
-		
-		add x0, x7, 43
-		add x1, x8, 27
-		movz x2, 10
-		movz x3, 5
-		movz x4, 0x99, lsl 16
-	        movk x4, 0x989A, lsl 00 //negro
-		bl paintLine 
-		
-		add x0, x7, 48
-		add x1, x8, 32
-		movz x2, 6
-		movz x3, 15
-		movz x4, 0x99, lsl 16
-	        movk x4, 0x989A, lsl 00 //negro
-		bl paintLine 
 		
 		add x0, x7, 21
 		add x1, x8, 43
@@ -882,27 +859,6 @@ catHead:
 		add sp, sp, #8 // Get original x30 from stack
 		
 		ret
-
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
