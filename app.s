@@ -42,16 +42,21 @@ main:
 		bl paintStar2
 
 		//Estrella 6
-		movz x7, 506
+		movz x7, 54
 		movz x8, 116
 		bl paintStar4
 
 		//Estrella 7
+		movz x7, 506
+		movz x8, 116
+		bl paintStar4
+
+		//Estrella 8
 		movz x7, 414
 		movz x8, 68
 		bl paintStar5
 
-		//Estrella 8
+		//Estrella 9
 		movz x7, 188
 		movz x8, 261
 		bl paintStar6
@@ -62,12 +67,850 @@ main:
 
 		//Cola y patas
 		bl paintLegsAndTail1
+
+		//DELAY
+		bl delay
+
+		//FRAME 2
+		//Fondo
+		bl paintBackground
+
+		//Arcoiris
+		bl paintRainbow2
+
+		//Estrella 1
+		movz x7, 48
+		movz x8, 358
+		bl paintStar1
+
+		//Estrella 2
+		movz x7, 156
+		movz x8, 278
+		bl paintStar1
+
+		//Estrella 3
+		movz x7, 586
+		movz x8, 154
+		bl paintStar1
+
+		//Estrella 4
+		movz x7, 624
+		movz x8, 278
+		bl paintStar1
+
+		//Estrella 5
+		movz x7, 500
+		movz x8, 358
+		bl paintStar2
+
+		//Estrella 6
+		movz x7, 210
+		movz x8, 385
+		bl paintStar2
+
+		//Estrella 7
+		movz x7, 102
+		movz x8, 149
+		bl paintStar3
+
+		//Estrella 8
+		movz x7, 554
+		movz x8, 149
+		bl paintStar3
+
+		//Estrella 9
+		movz x7, 290
+		movz x8, 275
+		bl paintStar4
+
+		//Estrella 10
+		movz x7, 457
+		movz x8, 116
+		bl paintStar5
+
+		//Estrella 10
+		movz x7, 5
+		movz x8, 116
+		bl paintStar5
+
+		/* //Estrella 11
+		movz x7, 5
+		movz x8, 116
+		bl paintStar5 */
+
+		//Estrella 12
+		movz x7, 366
+		movz x8, 69
+		bl paintStar6
+
+		//Tarta
+		mov x7, 176
+		bl paintPopTart
+
+		//Cola y patas
+		bl paintLegsAndTail2
+
+		//DELAY
+		bl delay
+
+		//FRAME 3
+		//Fondo
+		bl paintBackground
+
+		//Arcoiris
+		bl paintRainbow3
+
+		//Estrella 1
+		movz x7, 333
+		movz x8, 84
+		bl paintStar1
+
+		//Estrella 2
+		movz x7, 608
+		movz x8, 278
+		bl paintStar1
+
+		//Estrella 3
+		movz x7, 134
+		movz x8, 272
+		bl paintStar2
+
+		//Estrella 4
+		movz x7, 177
+		movz x8, 380
+		bl paintStar3
+
+		//Estrella 5
+		movz x7, 629
+		movz x8, 380
+		bl paintStar3
+
+		//Estrella 6
+		movz x7, 59
+		movz x8, 143
+		bl paintStar4
+
+		//Estrella 7
+		movz x7, 511
+		movz x8, 143
+		bl paintStar4
+
+		//Estrella 8
+		movz x7, 237
+		movz x8, 267
+		bl paintStar5
+
+		//Estrella 9
+		movz x7, 16
+		movz x8, 342
+		bl paintStar6
+
+		//Estrella 10
+		movz x7, 409
+		movz x8, 116
+		bl paintStar6
+
+		//Estrella 11
+		movz x7, 468
+		movz x8, 342
+		bl paintStar6
+
+		//Tarta
+		mov x7, 181
+		bl paintPopTart
+
+		//Cola y patas
+		bl paintLegsAndTail3
+
+		//DELAY
+		bl delay
+
+		//FRAME 4
+		//Fondo
+		bl paintBackground
+
+		//Arcoiris
+		bl paintRainbow4
+
+		//Estrella 1
+		movz x7, 376
+		movz x8, 133
+		bl paintStar1
+
+		//Estrella 2
+		movz x7, 624
+		movz x8, 294
+		bl paintStar1
+
+		//Estrella 3
+		movz x7, 312
+		movz x8, 79
+		bl paintStar2
+
+		//Estrella 4
+		movz x7, 586
+		movz x8, 272
+		bl paintStar2
+
+		//Estrella 5
+		movz x7, 102
+		movz x8, 267
+		bl paintStar3
+
+		//Estrella 6
+		movz x7, 134
+		movz x8, 374
+		bl paintStar4
+
+		//Estrella 7
+		movz x7, 586
+		movz x8, 374
+		bl paintStar4
+
+		//Estrella 8
+		movz x7, 463
+		movz x8, 143
+		bl paintStar5
+
+		//Estrella 9
+		movz x7, 419
+		movz x8, 342
+		bl paintStar5
+
+		//Estrella 10
+		movz x7, 231
+		movz x8, 208
+		bl paintStar5
+
+		//Estrella 11
+		movz x7, 11
+		movz x8, 143
+		bl paintStar5
+
+		//Estrella 12
+		movz x7, 194
+		movz x8, 278
+		bl paintStar6
+
+		//Tarta
+		mov x7, 181
+		bl paintPopTart
+
+		//Cola y patas
+		bl paintLegsAndTail4
+
+		//DELAY
+		bl delay
+
+		//FRAME 5
+		//Fondo
+		bl paintBackground
+
+		//Arcoiris
+		bl paintRainbow1
+
+		//Estrella 1
+		movz x7, 161
+		movz x8, 288
+		bl paintStar1
+
+		//Estrella 2
+		movz x7, 608
+		movz x8, 294
+		bl paintStar1
+
+		//Estrella 3
+		movz x7, 355
+		movz x8, 127
+		bl paintStar2
+
+		//Estrella 4
+		movz x7, 280
+		movz x8, 73
+		bl paintStar3
+
+		//Estrella 5
+		movz x7, 554
+		movz x8, 267
+		bl paintStar3
+
+		//Estrella 6
+		movz x7, 59
+		movz x8, 261
+		bl paintStar4
+
+		//Estrella 7
+		movz x7, 371
+		movz x8, 342
+		bl paintStar4
+
+		//Estrella 8
+		movz x7, 86
+		movz x8, 374
+		bl paintStar5
+
+		//Estrella 9
+		movz x7, 538
+		movz x8, 374
+		bl paintStar5
+
+		//Estrella 10
+		movz x7, 414
+		movz x8, 143
+		bl paintStar6
+
+		//Estrella 11
+		movz x7, 635
+		movz x8, 208
+		bl paintStar6
+
+		//Estrella 12
+		movz x7, 183
+		movz x8, 208
+		bl paintStar6
+
+		//Tarta
+		mov x7, 181
+		bl paintPopTart
+
+		//Cola y patas
+		bl paintLegsAndTail5
+
+		//DELAY
+		bl delay
+
+		//FRAME 6
+		//Fondo
+		bl paintBackground
+
+		//Arcoiris
+		bl paintRainbow2
+
+		//Estrella 1
+		movz x7, 382
+		movz x8, 159
+		bl paintStar1
+
+		//Estrella 2
+		movz x7, 602
+		movz x8, 224
+		bl paintStar1
+
+		//Estrella 3
+		movz x7, 151
+		movz x8, 224
+		bl paintStar1
+
+		//Estrella 4
+		movz x7, 140
+		movz x8, 283
+		bl paintStar2
+
+		//Estrella 5
+		movz x7, 586
+		movz x8, 288
+		bl paintStar2
+
+		//Estrella 6
+		movz x7, 323
+		movz x8, 122
+		bl paintStar3
+
+		//Estrella 7
+		movz x7, 328
+		movz x8, 347
+		bl paintStar3
+
+		//Estrella 8
+		movz x7, 237
+		movz x8, 68
+		bl paintStar4
+
+		//Estrella 9
+		movz x7, 511
+		movz x8, 261
+		bl paintStar4
+
+		//Estrella 10
+		movz x7, 11
+		movz x8, 261
+		bl paintStar5
+
+		//Estrella 11
+		movz x7, 38
+		movz x8, 374
+		bl paintStar6
+
+		//Estrella 11
+		movz x7, 489
+		movz x8, 374
+		bl paintStar6
+
+		//Tarta
+		mov x7, 181
+		bl paintPopTart
+
+		//Cola y patas
+		bl paintLegsAndTail6
+
+		//DELAY
+		bl delay
+
+		//FRAME 7
+		//Fondo
+		bl paintBackground
+
+		//Arcoiris
+		bl paintRainbow3
+
+		//Estrella 1
+		movz x7, 457
+		movz x8, 390
+		bl paintStar1
+
+		//Estrella 2
+		movz x7, 624
+		movz x8, 84
+		bl paintStar1
+
+		//Estrella 3
+		movz x7, 296
+		movz x8, 353
+		bl paintStar2
+
+		//Estrella 4
+		movz x7, 360
+		movz x8, 154
+		bl paintStar2
+
+		//Estrella 5
+		movz x7, 581
+		movz x8, 219
+		bl paintStar2
+
+		//Estrella 6
+		movz x7, 129
+		movz x8, 219
+		bl paintStar2
+
+		//Estrella 7
+		movz x7, 108
+		movz x8, 278
+		bl paintStar3
+
+		//Estrella 8
+		movz x7, 554
+		movz x8, 283
+		bl paintStar3
+
+		//Estrella 9
+		movz x7, 280
+		movz x8, 116
+		bl paintStar4
+
+		//Estrella 10
+		movz x7, 280
+		movz x8, 261
+		bl paintStar5
+
+		//Estrella 11
+		movz x7, 188
+		movz x8, 68
+		bl paintStar5
+
+		//Tarta
+		mov x7, 176
+		bl paintPopTart
+
+		//Cola y patas
+		bl paintLegsAndTail1
+
+		//DELAY
+		bl delay
+
+		//FRAME 8
+		//Fondo
+		bl paintBackground
+
+		//Arcoiris
+		bl paintRainbow4
+
+		//Estrella 1
+		movz x7, 274
+		movz x8, 358
+		bl paintStar1
+
+		//Estrella 2
+		movz x7, 436
+		movz x8, 385
+		bl paintStar2
+
+		//Estrella 3
+		movz x7, 97
+		movz x8, 213
+		bl paintStar3
+
+		//Estrella 4
+		movz x7, 328
+		movz x8, 149
+		bl paintStar3
+
+		//Estrella 5
+		movz x7, 549
+		movz x8, 213
+		bl paintStar3
+
+		//Estrella 6
+		movz x7, 65
+		movz x8, 272
+		bl paintStar4
+
+		//Estrella 7
+		movz x7, 511
+		movz x8, 278
+		bl paintStar4
+
+		//Estrella 8
+		movz x7, 231
+		movz x8, 116
+		bl paintStar5
+
+		//Estrella 9
+		movz x7, 140
+		movz x8, 68
+		bl paintStar6
+
+		//Estrella 10
+		movz x7, 414
+		movz x8, 261
+		bl paintStar6
+
+		//Estrella 11
+		movz x7, 592
+		movz x8, 68
+		bl paintStar6
+
+		//Tarta
+		mov x7, 176
+		bl paintPopTart
+
+		//Cola y patas
+		bl paintLegsAndTail2
+
+		//DELAY
+		bl delay
+
+		//FRAME 9
+		//Fondo
+		bl paintBackground
+
+		//Arcoiris
+		bl paintRainbow1
+
+		//Estrella 1
+		movz x7, 108
+		movz x8, 84
+		bl paintStar1
+
+		//Estrella 2
+		movz x7, 366
+		movz x8, 278
+		bl paintStar1
+
+		//Estrella 3
+		movz x7, 559
+		movz x8, 84
+		bl paintStar1
+
+		//Estrella 4
+		movz x7, 403
+		movz x8, 380
+		bl paintStar3
+
+		//Estrella 5
+		movz x7, 285
+		movz x8, 143
+		bl paintStar4
+
+		//Estrella 6
+		movz x7, 506
+		movz x8, 208
+		bl paintStar4
+
+		//Estrella 7
+		movz x7, 16
+		movz x8, 272
+		bl paintStar5
+
+		//Estrella 8
+		movz x7, 463
+		movz x8, 278
+		bl paintStar5
+
+		//Estrella 9
+		movz x7, 183
+		movz x8, 116
+		bl paintStar6
+
+		//Estrella 10
+		movz x7, 242
+		movz x8, 342
+		bl paintStar6
+
+		//Estrella 11
+		movz x7, 635
+		movz x8, 116
+		bl paintStar6
+
+		//Tarta
+		mov x7, 181
+		bl paintPopTart
+
+		//Cola y patas
+		bl paintLegsAndTail3
+
+		//DELAY
+		bl delay
+
+		//FRAME 10
+		//Fondo
+		bl paintBackground
+
+		//Arcoiris
+		bl paintRainbow2
+
+		//Estrella 1
+		movz x7, 151
+		movz x8, 133
+		bl paintStar1
+
+		//Estrella 2
+		movz x7, 602
+		movz x8, 133
+		bl paintStar1
+
+		//Estrella 3
+		movz x7, 629
+		movz x8, 358
+		bl paintStar1
+
+		//Estrella 4
+		movz x7, 634
+		movz x8, 358
+		bl paintStar1
+
+		//Estrella 5
+		movz x7, 86
+		movz x8, 79
+		bl paintStar2
+
+		//Estrella 6
+		movz x7, 538
+		movz x8, 79
+		bl paintStar2
+
+		//Estrella 7
+		movz x7, 328
+		movz x8, 265
+		bl paintStar3
+
+		//Estrella 8
+		movz x7, 360
+		movz x8, 374
+		bl paintStar4
+
+		//Estrella 9
+		movz x7, 194
+		movz x8, 342
+		bl paintStar5
+
+		//Estrella 10
+		movz x7, 237
+		movz x8, 143
+		bl paintStar5
+
+		//Estrella 11
+		movz x7, 457
+		movz x8, 208
+		bl paintStar6
+
+		//Estrella 12
+		movz x7, 414
+		movz x8, 278
+		bl paintStar6
+
+		//Tarta
+		mov x7, 181
+		bl paintPopTart
+
+		//Cola y patas
+		bl paintLegsAndTail4
+
+		//DELAY
+		bl delay
+
+		//FRAME 11
+		//Fondo
+		bl paintBackground
+
+		//Arcoiris
+		bl paintRainbow3
+
+		//Estrella 1
+		movz x7, 382
+		movz x8, 294
+		bl paintStar1
+
+		//Estrella 2
+		movz x7, 624
+		movz x8, 159
+		bl paintStar1
+
+		//Estrella 3
+		movz x7, 129
+		movz x8, 127
+		bl paintStar2
+
+		//Estrella 4
+		movz x7, 581
+		movz x8, 127
+		bl paintStar2
+
+		//Estrella 5
+		movz x7, 506
+		movz x8, 73
+		bl paintStar3
+
+		//Estrella 6
+		movz x7, 48
+		movz x8, 68
+		bl paintStar4
+
+		//Estrella 7
+		movz x7, 145
+		movz x8, 342
+		bl paintStar4
+
+		//Estrella 8
+		movz x7, 285
+		movz x8, 263
+		bl paintStar4
+
+		//Estrella 9
+		movz x7, 312
+		movz x8, 374
+		bl paintStar5
+
+		//Estrella 10
+		movz x7, 597
+		movz x8, 342
+		bl paintStar5
+
+		//Estrella 11
+		movz x7, 188
+		movz x8, 143
+		bl paintStar6
+
+		//Estrella 12
+		movz x7, 409
+		movz x8, 208
+		bl paintStar6
+
+		//Tarta
+		mov x7, 181
+		bl paintPopTart
+
+		//Cola y patas
+		bl paintLegsAndTail5
+
+		//DELAY
+		bl delay
+
+		//FRAME 12
+		//Fondo
+		bl paintBackground
+
+		//Arcoiris
+		bl paintRainbow4
+
+		//Estrella 1
+		movz x7, 156
+		movz x8, 159
+		bl paintStar1
+
+		//Estrella 2
+		movz x7, 608
+		movz x8, 159
+		bl paintStar1
+
+		//Estrella 3
+		movz x7, 366
+		movz x8, 288
+		bl paintStar2
+
+		//Estrella 4
+		movz x7, 97
+		movz x8, 122
+		bl paintStar3
+
+		//Estrella 5
+		movz x7, 102
+		movz x8, 347
+		bl paintStar3
+
+		//Estrella 6
+		movz x7, 549
+		movz x8, 122
+		bl paintStar3
+
+		//Estrella 7
+		movz x7, 554
+		movz x8, 347
+		bl paintStar3
+
+		//Estrella 8
+		movz x7, 463
+		movz x8, 68
+		bl paintStar4
+
+		//Estrella 9
+		movz x7, 0
+		movz x8, 68
+		bl paintStar5
+
+		//Estrella 10
+		movz x7, 237
+		movz x8, 261
+		bl paintStar5
+
+		//Estrella 11
+		movz x7, 264
+		movz x8, 374
+		bl paintStar6
+
+		//Tarta
+		mov x7, 181
+		bl paintPopTart
+
+		//Cola y patas
+		bl paintLegsAndTail6
+
+		//DELAY
+		bl delay
 		
-		//b animation
+		b animation
 	InfLoop: 
 		b InfLoop
 	
 //----------------------------------funciones----------------------------------	
+delay:
+	movz x10, 0x4FF, lsl 16
+				movk x10, 0xFFFF, lsl 00
+	_delay:
+	sub x10, x10, 1
+	cbnz x10, _delay
+	ret
+
 paintBackground:
 	sub sp, sp, #8
 	str x30, [sp]
