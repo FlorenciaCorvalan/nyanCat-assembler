@@ -5,7 +5,7 @@
 * El archivo _start.s_ contiene la inicialización del FrameBuffer, al finalizar llama a _app.s_ **(NO EDITAR)**
 * Nuestro código pinta al simpático Nyan Cat, con su animación incluida!
 
-![ Nyan Cat](nyan.gif) / ! [](nyan.gif)
+![ Nyan Cat](nyan.gif)
 
 ## Estructura
 
