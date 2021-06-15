@@ -2,7 +2,7 @@
 
 * Configuración de pantalla: `640x480` pixels, formato `ARGB` 32 bits.
 * El registro `X0` contiene la dirección base del FrameBuffer (Pixel 1)
-* El archivo _start.s_ contiene la inicialización del FrameBuffer, al finalizar llama a _app.s_ **(NO EDITAR)**
+* El archivo _start.s_ contiene la inicialización del FrameBuffer, al finalizar llama a _app.s_
 * Nuestro código pinta al simpático Nyan Cat, con su animación incluida!
 
 ![ Nyan Cat](nyan.gif)
